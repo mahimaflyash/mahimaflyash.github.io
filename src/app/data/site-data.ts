@@ -46,7 +46,7 @@ export const BUSINESS = {
    * 1. Go to https://web3forms.com, enter your email, get an Access Key.
    * 2. Paste it below. Form submissions will arrive in that inbox.
    */
-  web3formsAccessKey: 'YOUR_WEB3FORMS_ACCESS_KEY',
+  web3formsAccessKey: '486493a9-c4c1-49a4-8bab-264574bb7efd',
 };
 
 export interface Spec {
