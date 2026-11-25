@@ -1,0 +1,72 @@
+<section class="slider" aria-roledescription="carousel" aria-label="Our products">
+  @for (s of slides; track $index; let i = $index) {
+    <div
+      class="slide"
+      [class.is-active]="current() === i"
+      [class.slide--photo]="!!s.image"
+      [style.background-image]="s.image ? 'url(&quot;' + s.image + '&quot;)' : null"
+      role="group"
+      aria-roledescription="slide"
+      [attr.aria-label]="i + 1 + ' of ' + slides.length"
+      [attr.aria-hidden]="current() !== i"
+      [attr.inert]="current() !== i ? '' : null"
+    >
+      <div class="container slide__inner">
+        <div class="slide__content">
+          <p class="eyebrow eyebrow--light">{{ s.eyebrow }}</p>
+          @if (i === 0) {
+            <h1>{{ s.heading }}</h1>
+          } @else {
+            <h2 class="slide__title">{{ s.heading }}</h2>
+          }
+          <p class="slide__text">{{ s.text }}</p>
+          @if (i === 0) {
+            <p class="hero__tagline">{{ business.tagline }}</p>
+          }
+          <div class="hero__actions">
+            @if (s.productId) {
+              <a class="btn btn--whatsapp btn--lg" [href]="priceLink(s.productId)" target="_blank" rel="noopener">
+                <app-icon name="whatsapp" /> Get Price
+              </a>
+              <a class="btn btn--outline-light btn--lg" routerLink="/products" [fragment]="s.productId">
+                View Details <app-icon name="arrow" />
+              </a>
+            } @else {
+              <a class="btn btn--primary btn--lg" [href]="phoneLink"><app-icon name="phone" /> Call {{ business.phoneDisplay }}</a>
+              <a class="btn btn--whatsapp btn--lg" [href]="priceLink()" target="_blank" rel="noopener"><app-icon name="whatsapp" /> WhatsApp</a>
+              <a class="btn btn--outline-light btn--lg" routerLink="/products">View Products</a>
+            }
+          </div>
+        </div>
+        @if (!s.image) {
+          <div class="hero__art" aria-hidden="true">
+            <div class="brick-wall">
+              @for (b of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]; track b) {
+                <span></span>
+              }
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  }
+
+  <button type="button" class="slider__arrow slider__arrow--prev" aria-label="Previous slide" (click)="prev()">
+    <app-icon name="arrow" [size]="26" />
+  </button>
+  <button type="button" class="slider__arrow slider__arrow--next" aria-label="Next slide" (click)="next()">
+    <app-icon name="arrow" [size]="26" />
+  </button>
+
+  <div class="slider__dots">
+    @for (s of slides; track $index; let i = $index) {
+      <button
+        type="button"
+        [class.is-active]="current() === i"
+        [attr.aria-label]="'Go to slide ' + (i + 1)"
+        [attr.aria-current]="current() === i"
+        (click)="go(i)"
+      ></button>
+    }
+  </div>
+</section>

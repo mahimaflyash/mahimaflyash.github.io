@@ -1,0 +1,103 @@
+<!-- BANNER SLIDER (edit slides in site-data.ts → BANNER_SLIDES) -->
+<app-hero-slider />
+
+<!-- HIGHLIGHTS -->
+<section class="highlights">
+  <div class="container highlights__grid">
+    @for (h of highlights; track h.label) {
+      <div class="highlight">
+        <app-icon [name]="h.icon" [size]="30" />
+        <div>
+          <strong>{{ h.value }}</strong>
+          <span>{{ h.label }}</span>
+        </div>
+      </div>
+    }
+  </div>
+</section>
+
+<!-- WHY FLY ASH -->
+<section class="section">
+  <div class="container">
+    <div class="section__head">
+      <p class="eyebrow">Why fly ash bricks</p>
+      <h2>A smarter choice than red clay bricks</h2>
+      <p>Fly ash bricks are stronger, more uniform and better for the environment.</p>
+    </div>
+    <div class="grid grid--4">
+      @for (b of benefits; track b.title) {
+        <div class="card feature">
+          <span class="feature__icon"><app-icon [name]="b.icon" [size]="28" /></span>
+          <h3>{{ b.title }}</h3>
+          <p>{{ b.text }}</p>
+        </div>
+      }
+    </div>
+    <div class="center mt">
+      <a class="btn btn--outline" routerLink="/why-fly-ash-bricks">Compare with red bricks <app-icon name="arrow" /></a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT SNIPPET -->
+<section class="section section--sand">
+  <div class="container split">
+    <app-photo alt="Mahima Fly Ash Bricks plant" />
+    <div>
+      <p class="eyebrow">About us</p>
+      <h2>{{ business.yearsInBusiness }} years of trusted building materials in Baripada</h2>
+      <p>
+        Founded and run by <strong>{{ business.owner }}</strong>, {{ business.name }} has supplied builders,
+        contractors and families across Mayurbhanj for over {{ business.yearsInBusiness }} years. We focus on
+        consistent quality, fair prices and on-time delivery.
+      </p>
+      <ul class="checklist">
+        <li><app-icon name="check" /> Locally made at our plant in Podastia</li>
+        <li><app-icon name="check" /> Bricks, blocks and precast cement products in one place</li>
+        <li><app-icon name="check" /> Delivery to your site</li>
+      </ul>
+      <a class="btn btn--primary" routerLink="/about">More about us <app-icon name="arrow" /></a>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS PREVIEW -->
+<section class="section">
+  <div class="container">
+    <div class="section__head">
+      <p class="eyebrow">Our products</p>
+      <h2>Bricks, blocks &amp; precast cement products</h2>
+    </div>
+    <div class="grid grid--4">
+      @for (p of products; track p.id) {
+        <a class="card product-mini" routerLink="/products" [fragment]="p.id">
+          <app-photo [src]="p.image" [alt]="p.name" />
+          <div class="product-mini__body">
+            <h3>{{ p.name }}</h3>
+            <span class="link">View details <app-icon name="arrow" [size]="16" /></span>
+          </div>
+        </a>
+      }
+    </div>
+    <div class="center mt">
+      <a class="btn btn--primary" routerLink="/products">See all products <app-icon name="arrow" /></a>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR TEASER -->
+<section class="section section--dark">
+  <div class="container split split--center">
+    <div>
+      <p class="eyebrow eyebrow--light">Brick calculator</p>
+      <h2>How many bricks do you need?</h2>
+      <p>Enter your wall length and height to get a quick estimate of the number of bricks.</p>
+    </div>
+    <div class="right">
+      <a class="btn btn--light btn--lg" routerLink="/brick-calculator"><app-icon name="calculator" /> Open Calculator</a>
+    </div>
+  </div>
+</section>
+
+<app-testimonials />
+<app-cta-band />

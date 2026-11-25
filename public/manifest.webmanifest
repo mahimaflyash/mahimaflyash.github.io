@@ -1,0 +1,9 @@
+{
+  "name": "Mahima Fly Ash Bricks",
+  "short_name": "Mahima Bricks",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#a0412d",
+  "icons": [{ "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml" }]
+}

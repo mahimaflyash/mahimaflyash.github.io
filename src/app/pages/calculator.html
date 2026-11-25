@@ -1,0 +1,83 @@
+<app-page-hero
+  eyebrow="Brick calculator"
+  heading="How many bricks do I need?"
+  text="Get a quick estimate for your wall. For an exact quantity, share your plan with us."
+/>
+
+<section class="section">
+  <div class="container calc">
+    <form class="card calc__form" (submit)="$event.preventDefault()">
+      <h2>Wall details</h2>
+
+      <div class="field">
+        <span>Measurement unit</span>
+        <div class="segmented" role="radiogroup" aria-label="Unit">
+          <button type="button" [class.is-active]="unit() === 'ft'" [attr.aria-checked]="unit() === 'ft'" role="radio" (click)="unit.set('ft')">Feet</button>
+          <button type="button" [class.is-active]="unit() === 'm'" [attr.aria-checked]="unit() === 'm'" role="radio" (click)="unit.set('m')">Metres</button>
+        </div>
+      </div>
+
+      <div class="form__row">
+        <label class="field">
+          <span>Wall length ({{ unit() }})</span>
+          <input type="number" min="0" step="any" name="length" [ngModel]="length()" (ngModelChange)="length.set($event)" />
+        </label>
+        <label class="field">
+          <span>Wall height ({{ unit() }})</span>
+          <input type="number" min="0" step="any" name="height" [ngModel]="height()" (ngModelChange)="height.set($event)" />
+        </label>
+      </div>
+
+      <label class="field">
+        <span>Doors &amp; windows area to subtract ({{ areaLabel() }})</span>
+        <input type="number" min="0" step="any" name="openings" [ngModel]="openings()" (ngModelChange)="openings.set($event)" />
+      </label>
+
+      <div class="field">
+        <span>Wall thickness</span>
+        <div class="segmented" role="radiogroup" aria-label="Wall thickness">
+          <button type="button" [class.is-active]="thickness() === 'half'" [attr.aria-checked]="thickness() === 'half'" role="radio" (click)="thickness.set('half')">Half brick (4.5″)</button>
+          <button type="button" [class.is-active]="thickness() === 'full'" [attr.aria-checked]="thickness() === 'full'" role="radio" (click)="thickness.set('full')">Full brick (9″)</button>
+        </div>
+      </div>
+
+      <details class="calc__advanced">
+        <summary>Brick size &amp; mortar (advanced)</summary>
+        <div class="form__row form__row--3">
+          <label class="field">
+            <span>Brick length (mm)</span>
+            <input type="number" min="1" name="brickL" [ngModel]="brickL()" (ngModelChange)="brickL.set($event)" />
+          </label>
+          <label class="field">
+            <span>Brick height (mm)</span>
+            <input type="number" min="1" name="brickH" [ngModel]="brickH()" (ngModelChange)="brickH.set($event)" />
+          </label>
+          <label class="field">
+            <span>Mortar joint (mm)</span>
+            <input type="number" min="0" name="joint" [ngModel]="joint()" (ngModelChange)="joint.set($event)" />
+          </label>
+        </div>
+        <label class="field">
+          <span>Wastage allowance (%)</span>
+          <input type="number" min="0" max="50" name="wastage" [ngModel]="wastage()" (ngModelChange)="wastage.set($event)" />
+        </label>
+      </details>
+    </form>
+
+    <aside class="card calc__result" aria-live="polite">
+      <app-icon name="bricks" [size]="40" />
+      <p class="muted">Estimated bricks needed</p>
+      <p class="calc__number">{{ withWastage().toLocaleString('en-IN') }}</p>
+      <p class="muted small">
+        {{ bricks().toLocaleString('en-IN') }} bricks + {{ wastage() ?? 0 }}% wastage<br />
+        Net wall area: {{ netAreaM2().toFixed(2) }} sq m
+      </p>
+      <a class="btn btn--whatsapp btn--block" [href]="quoteLink()" target="_blank" rel="noopener">
+        <app-icon name="whatsapp" /> Get price on WhatsApp
+      </a>
+      <p class="small muted calc__note">
+        This is an approximate estimate. Actual quantity depends on brick size, bonding pattern and site conditions.
+      </p>
+    </aside>
+  </div>
+</section>
