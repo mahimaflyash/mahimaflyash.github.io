@@ -43,6 +43,12 @@ import { PageHero } from '../shared/page-hero';
             <span class="feature__icon"><app-icon name="truck" [size]="24" /></span>
             <span><strong>We deliver to</strong>{{ business.serviceArea.join(', ') }}</span>
           </div>
+          @if (business.gstin) {
+            <div class="contact-card card">
+              <span class="feature__icon"><app-icon name="shield" [size]="24" /></span>
+              <span><strong>GSTIN</strong>{{ business.gstin }}</span>
+            </div>
+          }
         </div>
 
         <div class="card contact__form">

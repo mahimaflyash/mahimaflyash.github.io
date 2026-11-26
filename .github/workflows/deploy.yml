@@ -29,9 +29,9 @@ jobs:
 
       - run: npm run build
 
-      # Angular routes (e.g. /products) need this so direct links / refresh work on GitHub Pages
-      - name: Add SPA fallback
-        run: cp dist/mahima-fly-ash-bricks/browser/index.html dist/mahima-fly-ash-bricks/browser/404.html
+      # Pages are prerendered to static HTML (SSG). Unknown URLs get the client-rendered app, which shows "Page not found"
+      - name: Add 404 fallback
+        run: cp dist/mahima-fly-ash-bricks/browser/index.csr.html dist/mahima-fly-ash-bricks/browser/404.html
 
       - uses: actions/upload-pages-artifact@v3
         with:

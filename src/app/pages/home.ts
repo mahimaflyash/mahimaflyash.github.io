@@ -4,12 +4,13 @@ import { BUSINESS, PRODUCTS } from '../data/site-data';
 import { CtaBand } from '../sections/cta-band';
 import { HeroSlider } from '../sections/hero-slider';
 import { Testimonials } from '../sections/testimonials';
+import { VisitUs } from '../sections/visit-us';
 import { Icon } from '../shared/icon';
 import { Photo } from '../shared/photo';
 
 @Component({
   selector: 'app-home',
-  imports: [RouterLink, Icon, Photo, HeroSlider, Testimonials, CtaBand],
+  imports: [RouterLink, Icon, Photo, HeroSlider, Testimonials, VisitUs, CtaBand],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './home.html',
 })

@@ -15,7 +15,7 @@ import { NAV_LINKS } from './header';
         <div>
           <app-logo [light]="true" />
           <p class="footer__about">
-            Manufacturer of fly ash bricks, solid blocks and precast cement products in Baripada for over
+            Manufacturing fly ash bricks, solid blocks and precast cement products in Baripada for over
             {{ business.yearsInBusiness }} years.
           </p>
           <p class="footer__tagline">{{ business.tagline }}</p>
@@ -44,11 +44,17 @@ import { NAV_LINKS } from './header';
             <li><app-icon name="whatsapp" [size]="18" /><a [href]="wa" target="_blank" rel="noopener">WhatsApp us</a></li>
             <li><app-icon name="mail" [size]="18" /><a [href]="emailLink">{{ business.email }}</a></li>
             <li><app-icon name="clock" [size]="18" /><span>{{ business.hours }}</span></li>
+            @if (business.gstin) {
+              <li><app-icon name="shield" [size]="18" /><span>GSTIN: {{ business.gstin }}</span></li>
+            }
           </ul>
         </div>
       </div>
       <div class="footer__bottom">
-        <div class="container">© {{ year }} {{ business.name }}. All rights reserved.</div>
+        <div class="container footer__bottom-inner">
+          <span>© {{ year }} {{ business.name }}. All rights reserved.</span>
+          <a routerLink="/privacy-policy">Privacy Policy</a>
+        </div>
       </div>
     </footer>
   `,

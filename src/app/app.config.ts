@@ -3,6 +3,7 @@ import { TitleStrategy, provideRouter, withInMemoryScrolling } from '@angular/ro
 
 import { routes } from './app.routes';
 import { SeoTitleStrategy } from './core/seo';
+import { provideClientHydration } from '@angular/platform-browser';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -12,5 +13,6 @@ export const appConfig: ApplicationConfig = {
       withInMemoryScrolling({ scrollPositionRestoration: 'top', anchorScrolling: 'enabled' }),
     ),
     { provide: TitleStrategy, useClass: SeoTitleStrategy },
+    provideClientHydration(),
   ],
 };

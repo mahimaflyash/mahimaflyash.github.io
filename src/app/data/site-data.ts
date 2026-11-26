@@ -27,6 +27,9 @@ export const BUSINESS = {
 
   email: 'flyashbricksmahima@gmail.com',
 
+  // TODO: add your 15-character GSTIN, e.g. '21ABCDE1234F1Z5'. Leave '' to hide it.
+  gstin: '',
+
   address: {
     line1: 'Udala - Baripada Rd, Podastia',
     city: 'Baripada',
@@ -39,7 +42,8 @@ export const BUSINESS = {
   serviceArea: ['Baripada', 'Mayurbhanj District'],
 
   mapLink: 'https://maps.app.goo.gl/da3kUPFEbUX97E1J9',
-  mapEmbed: 'https://maps.google.com/maps?q=21.9160255,86.7124568&z=15&output=embed',
+  mapEmbed:
+    'https://maps.google.com/maps?q=Mahima+Fly+Ash+Bricks,+Udala+-+Baripada+Rd,+Podastia,+Baripada,+Odisha+757049&z=15&output=embed',
 
   /**
    * Enquiry form (Web3Forms — free, no backend).

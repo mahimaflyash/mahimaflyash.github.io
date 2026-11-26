@@ -24,7 +24,9 @@ export class SeoTitleStrategy extends TitleStrategy {
     let route = snapshot.root;
     while (route.firstChild) route = route.firstChild;
     const description: string | undefined = route.data['description'];
-    const url = SITE_URL + snapshot.url.split(/[?#]/)[0];
+    // Prerendered pages live at /path/index.html, so GitHub Pages' canonical form has a trailing slash
+    const path = snapshot.url.split(/[?#]/)[0].replace(/\/$/, '');
+    const url = SITE_URL + path + '/';
 
     if (description) {
       this.meta.updateTag({ name: 'description', content: description });

@@ -67,6 +67,12 @@ export const routes: Routes = [
     },
   },
   {
+    path: 'privacy-policy',
+    loadComponent: () => import('./pages/privacy').then((m) => m.Privacy),
+    title: 'Privacy Policy',
+    data: { description: 'How Mahima Fly Ash Bricks collects and uses information sent through this website.' },
+  },
+  {
     path: '**',
     loadComponent: () => import('./pages/not-found').then((m) => m.NotFound),
     title: 'Page Not Found',
