@@ -15,7 +15,7 @@ import { NAV_LINKS } from './header';
         <div>
           <app-logo [light]="true" />
           <p class="footer__about">
-            Manufacturing fly ash bricks, solid blocks and precast cement products in Baripada for over
+            Manufacturing fly ash bricks and precast cement products in Baripada for over
             {{ business.yearsInBusiness }} years.
           </p>
           <p class="footer__tagline">{{ business.tagline }}</p>

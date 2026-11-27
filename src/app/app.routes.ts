@@ -9,7 +9,7 @@ export const routes: Routes = [
     title: 'Fly Ash Bricks Manufacturer in Baripada, Odisha',
     data: {
       description:
-        'Mahima Fly Ash Bricks, Baripada — manufacturer of fly ash bricks, solid blocks, boundary slabs, cement pillars and Tulsi Chaura. Delivery across Mayurbhanj. Call 094372 38893.',
+        'Mahima Fly Ash Bricks, Baripada — manufacturer of fly ash bricks, boundary slabs, cement pillars and Tulsi Chaura. Delivery across Mayurbhanj. Call 094372 38893.',
     },
   },
   {
@@ -24,10 +24,10 @@ export const routes: Routes = [
   {
     path: 'products',
     loadComponent: () => import('./pages/products').then((m) => m.Products),
-    title: 'Products — Fly Ash Bricks, Blocks, Slabs & Pillars',
+    title: 'Products — Fly Ash Bricks, Slabs & Pillars',
     data: {
       description:
-        'Fly ash bricks, solid blocks, sky lights, boundary slabs, 6 ft & 9 ft cement pillars, boundary pillars and cement Tulsi Chaura in Baripada.',
+        'Fly ash bricks, sky lights, boundary slabs, 6 ft & 9 ft cement pillars, boundary pillars and cement Tulsi Chaura in Baripada.',
     },
   },
   {
@@ -63,7 +63,7 @@ export const routes: Routes = [
     title: 'Contact Us',
     data: {
       description:
-        'Contact Mahima Fly Ash Bricks, Udala - Baripada Rd, Podastia, Baripada, Odisha 757049. Call or WhatsApp 094372 38893. Open 8 AM – 8 PM.',
+        'Contact Mahima Fly Ash Bricks, Udala - Baripada Rd, Podastia, Baripada, Odisha 757049. Call or WhatsApp 094372 38893. Open 6:50 AM – 6 PM.',
     },
   },
   {

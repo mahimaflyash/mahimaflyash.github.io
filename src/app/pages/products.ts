@@ -12,7 +12,7 @@ import { Photo } from '../shared/photo';
   template: `
     <app-page-hero
       eyebrow="Our products"
-      heading="Fly ash bricks, blocks & precast cement products"
+      heading="Fly ash bricks & precast cement products"
       text="Made at our plant in Baripada. Contact us for the latest price and delivery."
     />
 

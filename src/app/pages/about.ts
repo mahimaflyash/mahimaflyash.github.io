@@ -27,7 +27,7 @@ import { Photo } from '../shared/photo';
           </p>
           <p>
             Over the past {{ business.yearsInBusiness }} years we have grown from a small unit into a trusted name
-            across Mayurbhanj district. Today we make fly ash bricks, solid blocks, sky lights, boundary slabs,
+            across Mayurbhanj district. Today we make fly ash bricks, sky lights, boundary slabs,
             cement pillars and Tulsi Chaura at our plant on Udala - Baripada Road, Podastia.
           </p>
           <p>
@@ -35,7 +35,7 @@ import { Photo } from '../shared/photo';
             mouth. We are proud of that trust and work every day to keep it.
           </p>
         </div>
-        <app-photo alt="Our plant at Podastia, Baripada" />
+        <app-photo src="images/about/plant-podastia.jpg" alt="Our plant at Podastia, Baripada" />
       </div>
     </section>
 

@@ -37,8 +37,8 @@ export const BUSINESS = {
     state: 'Odisha',
     pin: '757049',
   },
-  hours: 'Monday – Sunday, 8:00 AM – 8:00 PM',
-  hoursShort: '8 AM – 8 PM',
+  hours: 'Monday – Sunday, 6:50 AM – 6:00 PM',
+  hoursShort: '6:50 AM – 6 PM',
   serviceArea: ['Baripada', 'Mayurbhanj District'],
 
   mapLink: 'https://maps.app.goo.gl/da3kUPFEbUX97E1J9',
@@ -75,26 +75,13 @@ export const PRODUCTS: Product[] = [
     name: 'Fly Ash Bricks',
     summary:
       'Uniform, machine-pressed bricks made from fly ash, cement and sand. Lighter and smoother than red clay bricks, needing less plaster.',
-    image: '',
+    image: 'images/products/fly-ash-bricks.jpg',
     specs: [
       { label: 'Size', value: TBU },
       { label: 'Weight', value: TBU },
       { label: 'Strength', value: TBU },
     ],
     uses: ['Houses', 'Commercial buildings', 'Load-bearing & partition walls'],
-  },
-  {
-    id: 'solid-blocks',
-    name: 'Solid Blocks',
-    summary:
-      'Large solid cement blocks for faster construction. Fewer joints mean less mortar and quicker work on site.',
-    image: '',
-    specs: [
-      { label: 'Size', value: TBU },
-      { label: 'Weight', value: TBU },
-      { label: 'Strength', value: TBU },
-    ],
-    uses: ['Boundary walls', 'Godowns & sheds', 'External walls'],
   },
   {
     id: 'sky-light',
@@ -184,24 +171,17 @@ export interface BannerSlide {
 
 export const BANNER_SLIDES: BannerSlide[] = [
   {
-    image: '',
+    image: 'images/banner/plant-shed.jpg',
     eyebrow: 'Baripada · Mayurbhanj · 20+ years',
     heading: 'Quality Fly Ash Bricks & Cement Products for Strong Buildings',
-    text: 'Eco-friendly bricks, blocks, boundary slabs, pillars and more — delivered to your site.',
+    text: 'Eco-friendly bricks, boundary slabs, pillars and more — delivered to your site.',
   },
   {
-    image: '',
+    image: 'images/banner/fly-ash-bricks.jpg',
     eyebrow: 'Best seller',
     heading: 'Fly Ash Bricks',
     text: 'Uniform size, smooth finish and less plaster. Stronger walls at a lower cost.',
     productId: 'fly-ash-bricks',
-  },
-  {
-    image: '',
-    eyebrow: 'Faster construction',
-    heading: 'Solid Blocks',
-    text: 'Large solid blocks for quick, strong boundary walls, sheds and buildings.',
-    productId: 'solid-blocks',
   },
   {
     image: '',
@@ -226,11 +206,14 @@ export interface GalleryItem {
 }
 
 export const GALLERY: GalleryItem[] = [
-  { category: 'Plant', caption: 'Our manufacturing plant at Podastia', image: '' },
+  { category: 'Plant', caption: 'Our manufacturing plant at Podastia', image: 'images/gallery/plant-shed.jpg' },
+  { category: 'Plant', caption: 'Curing yard', image: 'images/gallery/curing-yard.jpg' },
+  { category: 'Plant', caption: 'Stock yard', image: 'images/gallery/stock-yard.jpg' },
+  { category: 'Plant', caption: 'Ready stock for delivery', image: 'images/gallery/ready-stock.jpg' },
   { category: 'Plant', caption: 'Raw material storage', image: '' },
-  { category: 'Plant', caption: 'Curing yard', image: '' },
-  { category: 'Production', caption: 'Brick pressing machine', image: '' },
-  { category: 'Production', caption: 'Freshly made fly ash bricks', image: '' },
+  { category: 'Production', caption: 'Brick pressing machine', image: 'images/gallery/brick-machine.jpg' },
+  { category: 'Production', caption: 'Freshly made fly ash bricks', image: 'images/gallery/fresh-bricks.jpg' },
+  { category: 'Production', caption: 'Fly ash bricks on pallets', image: 'images/gallery/bricks-on-pallets.jpg' },
   { category: 'Production', caption: 'Pillars and boundary slabs', image: '' },
   { category: 'Projects', caption: 'Residential house, Baripada', image: '' },
   { category: 'Projects', caption: 'Boundary wall project', image: '' },
@@ -299,7 +282,7 @@ export const FAQS: Faq[] = [
   },
   {
     q: 'What are your working hours?',
-    a: 'We are open every day from 8:00 AM to 8:00 PM.',
+    a: 'We are open every day from 6:50 AM to 6:00 PM.',
   },
   {
     q: 'Can I visit the plant?',
